@@ -1,0 +1,157 @@
+@font-face {
+  font-family: Lato-Light;
+  src: url("./assets/fonts/Lato-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: Lato-Regular;
+  src: url("./assets/fonts/Lato-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Lato-Bold;
+  src: url("./assets/fonts/Lato-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Lato-Black;
+  src: url("./assets/fonts/Lato-Black.ttf") format("truetype");
+  font-weight: 900;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio__wrapper {
+  position: relative;
+  width: 940px;
+  padding: 40px;
+  background-color: #2d303a;
+}
+
+.portfolio__title {
+  font-family: "Lato-Black";
+  font-size: 30px;
+  margin: 20px 0;
+}
+.portfolio__text {
+  font-family: "Lato-Light";
+  font-size: 18px;
+  margin: 21px 0 16px 0;
+}
+.portfolio__images {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 621px;
+  overflow: hidden;
+}
+.portfolio__images img {
+  margin: 0 0 20px;
+}
+.portfolio__bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background-color: #323746;
+}
+
+.portfolio__tag_color {
+  color: #767e9e;
+}
+
+.tag-button {
+  margin-right: 5px;
+  margin-left: 1px;
+  height: 22px;
+  font-size: 12px;
+  font-family: "Lato-Regular";
+  border: 1px solid #767e9e;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.portfolio__active-tag_color {
+  color: #dedede;
+  border: 1px solid #dedede;
+}
+
+.about-us {
+  display: flex;
+  justify-content: center;
+}
+.about-us__wrapper {
+  position: relative;
+  width: 940px;
+  height: 654px;
+  padding: 40px;
+  background-color: #f2f2f2;
+}
+.about-us__title {
+  font-family: "Lato-Black";
+  font-size: 30px;
+  margin: 19px 0;
+}
+.about-us__text {
+  font-family: "Lato-Light";
+  font-size: 18px;
+  line-height: 29px;
+}
+.about-us__cards-list {
+  margin-top: 46px;
+  display: flex;
+  justify-content: space-between;
+}
+.about-us__card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.card__title {
+  margin: 11px 0;
+  font-family: "Lato-Black";
+  font-size: 18px;
+}
+.card__text {
+  margin: 11px 0;
+  line-height: 1.5;
+  font-family: "Lato-Regular";
+  font-size: 12px;
+}
+.social-media {
+  margin-top: 27px;
+}
+.social-media img {
+  margin-right: 4px;
+}
+.social-media img:hover {
+  -webkit-filter: drop-shadow(2px 2px 2px #666d89);
+  filter: drop-shadow(2px 2px 2px #666d89);
+  cursor: pointer;
+}
+.about-us__bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.title-color {
+  color: #666d89;
+}
+.text-color {
+  color: #767e9e;
+}
