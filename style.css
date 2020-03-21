@@ -86,7 +86,21 @@ body {
   width: 1020px;
   height: 594px;
   position: relative;
+  overflow: hidden;
+}
+.slider__container {
+  position: absolute;
+  top: 0;
+  width: 2040px;
+  display: flex;
+}
+.slider-one {
+  width: 1020px;
+  height: 594px;
+  position: relative;
   background-color: #f06c64;
+}
+.slider-two {
 }
 .slider__iphone-vertical {
   position: absolute;
