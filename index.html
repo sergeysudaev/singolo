@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link href="script.js" rel="preload" as="script" />
     <title>Singolo</title>
   </head>
   <body>
@@ -15,27 +16,39 @@
       </div>
       <nav class="menu">
         <ul class="menu__list">
-          <li><a href="#">HOME</a></li>
+          <li><a class="menu__list_active" href="#">HOME</a></li>
           <li class="menu__dot">·</li>
-          <li><a href="#">SERVICES</a></li>
+          <li><a href="#services">SERVICES</a></li>
           <li class="menu__dot">·</li>
-          <li><a href="#">PORTFOLIO</a></li>
+          <li><a href="#portfolio">PORTFOLIO</a></li>
           <li class="menu__dot">·</li>
-          <li><a href="#">ABOUT</a></li>
+          <li><a href="#about-us">ABOUT</a></li>
           <li class="menu__dot">·</li>
-          <li><a href="#">CONTACT</a></li>
+          <li><a href="#get-a-quote">CONTACT</a></li>
         </ul>
       </nav>
+      <div class="header-bottom"></div>
     </header>
-    <div class="header-bottom"></div>
-    <section class="slider">
+    <section id="slider" class="slider">
       <div class="slider__container">
         <div class="slider-one">
           <div class="slider__iphone-vertical">
             <img src="./assets/iPhoneVertical.png" alt="iPhone Vertical" />
+            <img
+              class="iphone-vertical__background"
+              src="./assets/phone-vertical-display-background.png"
+              alt="screen"
+            />
+            <div class="iphone-vertical__black-background"></div>
           </div>
           <div class="slider__iphone-horizontal">
             <img src="./assets/iPhoneHorizontal.png" alt="iPhone Horizontal" />
+            <img
+              class="iphone-horizontal__background"
+              src="./assets/phone-horizontal-display-background.png"
+              alt="screen"
+            />
+            <div class="iphone-horizontal__black-background"></div>
           </div>
         </div>
         <div class="slider-two">
@@ -46,7 +59,7 @@
       <img src="./assets/right-arrow.png" class="slider__right-arrow" />
     </section>
     <div class="slider-bottom"></div>
-    <section class="services">
+    <section id="services" class="services">
       <div class="services__big-section">
         <h2>Our Services</h2>
         <p>
@@ -120,7 +133,7 @@
       </div>
     </section>
     <div class="services-bottom"></div>
-    <section class="portfolio">
+    <section id="portfolio" class="portfolio">
       <div class="portfolio__wrapper">
         <h1 class="portfolio__title portfolio_title-color">Portfolio</h1>
         <p class="portfolio__text portfolio_text-color">
@@ -128,7 +141,11 @@
           lacinia odio sem nec elit.
         </p>
         <div class="portfolio__tags">
-          <button class="tag-button portfolio__active-tag_color">All</button>
+          <button
+            class="tag-button portfolio__tag_color portfolio__active-tag_color"
+          >
+            All
+          </button>
           <button class="tag-button portfolio__tag_color">Web Design</button>
           <button class="tag-button portfolio__tag_color">
             Graphic Design
@@ -152,7 +169,7 @@
         <div class="portfolio__bottom-line"></div>
       </div>
     </section>
-    <section class="about-us">
+    <section id="about-us" class="about-us">
       <div class="about-us__wrapper">
         <h1 class="about-us__title portfolio_title-color">About Us</h1>
         <p class="about-us__text portfolio_text-color">
@@ -214,7 +231,7 @@
         <div class="about-us__bottom-line"></div>
       </div>
     </section>
-    <section class="get-a-quote">
+    <section id="get-a-quote" class="get-a-quote">
       <div class="get-a-quote__wrapper">
         <h1 class="get-a-quote__title get-a-quote_text-color">Get a Quote</h1>
         <p class="get-a-quote__text get-a-quote_text-color">
@@ -224,7 +241,7 @@
           tortor mauris condimentum nibh.
         </p>
         <div class="get-a-quote__main-row">
-          <form class="input-form">
+          <form id="form" class="input-form">
             <input
               class="input-form__input"
               placeholder="Name (Required)"
@@ -239,6 +256,7 @@
             <textarea
               class="input-form__textarea"
               placeholder="Describe your project in detail..."
+              maxlength="50"
             ></textarea>
             <button type="submit" class="input-form__button">Send</button>
           </form>
@@ -283,6 +301,11 @@
         <div class="get-a-quote__bottom-line"></div>
       </div>
     </section>
+    <div class="modal modal_hide">
+      <div class="modal__container">
+        <button id="modal-button" class="modal-button">OK</button>
+      </div>
+    </div>
     <footer class="footer">
       <div class="footer__wrapper">
         <p class="footer__copyright">© Copyright 2013</p>

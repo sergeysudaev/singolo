@@ -19,6 +19,10 @@
   font-weight: 900;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -31,9 +35,12 @@ body {
   width: 1020px;
   height: 89px;
   display: flex;
+  position: fixed;
+  top: 0;
   align-items: center;
   justify-content: space-between;
   background-color: #2d303a;
+  z-index: 999;
 }
 
 .logo {
@@ -55,6 +62,8 @@ body {
   width: 1020px;
   height: 6px;
   background-color: #323746;
+  position: absolute;
+  bottom: 0;
 }
 
 .menu {
@@ -73,7 +82,9 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-
+.menu__list_active {
+  color: #f06c64 !important;
+}
 .menu__list li a:hover {
   color: #f06c64;
 }
@@ -83,6 +94,7 @@ body {
 }
 
 .slider {
+  margin-top: 89px;
   width: 1020px;
   height: 594px;
   position: relative;
@@ -106,16 +118,57 @@ body {
   position: absolute;
   top: 53px;
   left: 112px;
+  z-index: 10;
+  cursor: pointer;
+}
+.iphone-vertical__background {
+  position: absolute;
+  left: 12px;
+  top: 63px;
+  z-index: -1;
+  transition: opacity ease 0.3s;
 }
 .slider__iphone-horizontal {
   position: absolute;
   top: 174px;
   right: 111px;
+  z-index: 10;
+  cursor: pointer;
+}
+.iphone-horizontal__background {
+  position: absolute;
+  left: 58px;
+  top: 12px;
+  z-index: -1;
+  transition: opacity ease 0.3s;
+}
+.iphone-horizontal__background_hide,
+.iphone-vertical__background_hide {
+  opacity: 0;
+}
+.iphone-vertical__black-background {
+  position: absolute;
+  left: 12px;
+  top: 63px;
+  width: 192px;
+  height: 337px;
+  background-color: #000;
+  z-index: -2;
+}
+.iphone-horizontal__black-background {
+  position: absolute;
+  left: 58px;
+  top: 12px;
+  width: 337px;
+  height: 192px;
+  background-color: #000;
+  z-index: -2;
 }
 .slider__left-arrow {
   position: absolute;
   top: 280px;
   left: 42px;
+  z-index: 500;
 }
 .slider__left-arrow:hover {
   filter: brightness(0.4);
@@ -125,6 +178,7 @@ body {
   position: absolute;
   top: 280px;
   right: 40px;
+  z-index: 500;
 }
 .slider__right-arrow:hover {
   filter: brightness(0.4);
@@ -142,6 +196,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #f2f2f2;
+  scroll-margin-top: 89px;
 }
 .services__big-section {
   padding: 34px 37px 25px 39px;
@@ -206,6 +261,7 @@ body {
 .portfolio {
   display: flex;
   justify-content: center;
+  scroll-margin-top: 89px;
 }
 
 .portfolio__wrapper {
@@ -237,6 +293,14 @@ body {
 .portfolio__images img {
   margin: 0 0 20px;
 }
+.portfolio__images img:hover {
+  cursor: pointer;
+  filter: brightness(125%);
+}
+.portfolio__image_active {
+  outline: 5px solid #f06c64;
+  outline-offset: -5px;
+}
 .portfolio__bottom-line {
   position: absolute;
   bottom: 0;
@@ -260,7 +324,9 @@ body {
   border-radius: 5px;
   background-color: transparent;
 }
-
+.tag-button:hover {
+  cursor: pointer;
+}
 .portfolio__active-tag_color {
   color: #dedede;
   border: 1px solid #dedede;
@@ -269,6 +335,7 @@ body {
 .about-us {
   display: flex;
   justify-content: center;
+  scroll-margin-top: 89px;
 }
 .about-us__wrapper {
   position: relative;
@@ -337,6 +404,7 @@ body {
 .get-a-quote {
   display: flex;
   justify-content: center;
+  scroll-margin-top: 89px;
 }
 
 .get-a-quote__wrapper {
@@ -470,6 +538,49 @@ body {
   height: 6px;
   width: 100%;
   background-color: #ea676b;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff4d;
+  z-index: 1000;
+}
+.modal_hide {
+  display: none;
+}
+.modal__container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  font-family: "Lato-Light";
+  font-size: 18px;
+  line-height: 30px;
+  overflow: hidden;
+}
+.modal-button {
+  width: 50%;
+  align-self: center;
+  border: 0;
+  border-radius: 5px;
+  background-color: #f0d8d9;
+  font-size: 18px;
+  font-family: "Lato-Regular";
+  color: #f48c8f;
+}
+.modal-button:hover {
+  cursor: pointer;
 }
 .footer {
   display: flex;
