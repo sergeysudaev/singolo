@@ -131,18 +131,12 @@ class Slider {
     this.isProcessing = true;
     if (!this.isRedSlideActive) {
       this.sliderContainer.removeChild(this.redSlide);
-      debugger;
       this.sliderContainer.prepend(this.redSlide);
-      debugger;
       this.sliderContainer.setAttribute("style", `left:-1020px`);
-      debugger;
     } else {
       this.sliderContainer.removeChild(this.blueSlide);
-      debugger;
       this.sliderContainer.prepend(this.blueSlide);
-      debugger;
       this.sliderContainer.setAttribute("style", `left:-1020px`);
-      debugger;
     }
     let leftPosition = -1020;
     const intervalID = setInterval(() => {
