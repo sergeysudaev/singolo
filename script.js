@@ -5,7 +5,8 @@ const [slider, services, portfolio, about_us, get_a_quote] = [
   "about-us",
   "get-a-quote"
 ];
-const headerHeight = 89;
+const headerHeight = 95;
+
 const menuItemsList = document.querySelectorAll(".menu__list>li>a");
 
 document.querySelector("nav").addEventListener("click", event => {
@@ -91,7 +92,6 @@ horizontalPhone.addEventListener("click", () => {
 });
 
 // slider
-
 class Slider {
   constructor() {
     this.isProcessing = false;
@@ -99,6 +99,14 @@ class Slider {
     this.redSlide = document.querySelector(".slider-one");
     this.blueSlide = document.querySelector(".slider-two");
     this.sliderContainer = document.querySelector(".slider__container");
+  }
+
+  getWindowWidth() {
+    let result = 1020;
+    if (document.documentElement.clientWidth < 1020) {
+      result = document.documentElement.clientWidth;
+    }
+    return result;
   }
 
   onRightClick() {
@@ -119,7 +127,7 @@ class Slider {
         "style",
         `left:${(leftPosition -= 10)}px`
       );
-      if (leftPosition < -1010) {
+      if (leftPosition <= -sliderCarousel.getWindowWidth()) {
         clearInterval(intervalID);
         this.isProcessing = false;
       }
@@ -132,13 +140,19 @@ class Slider {
     if (!this.isRedSlideActive) {
       this.sliderContainer.removeChild(this.redSlide);
       this.sliderContainer.prepend(this.redSlide);
-      this.sliderContainer.setAttribute("style", `left:-1020px`);
+      this.sliderContainer.setAttribute(
+        "style",
+        `left:-${sliderCarousel.getWindowWidth()}px`
+      );
     } else {
       this.sliderContainer.removeChild(this.blueSlide);
       this.sliderContainer.prepend(this.blueSlide);
-      this.sliderContainer.setAttribute("style", `left:-1020px`);
+      this.sliderContainer.setAttribute(
+        "style",
+        `left:-${sliderCarousel.getWindowWidth()}px`
+      );
     }
-    let leftPosition = -1020;
+    let leftPosition = -sliderCarousel.getWindowWidth();
     const intervalID = setInterval(() => {
       this.sliderContainer.setAttribute(
         "style",
@@ -154,6 +168,17 @@ class Slider {
 }
 
 const sliderCarousel = new Slider();
+
+window.addEventListener("resize", () => {
+  if (
+    sliderCarousel.sliderContainer.getAttribute("style").split("").length > 9
+  ) {
+    sliderCarousel.sliderContainer.setAttribute(
+      "style",
+      `left:-${sliderCarousel.getWindowWidth()}px`
+    );
+  }
+});
 
 document
   .querySelector(".slider__right-arrow")
